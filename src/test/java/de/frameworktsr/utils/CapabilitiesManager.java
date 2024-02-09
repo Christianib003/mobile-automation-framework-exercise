@@ -14,12 +14,11 @@ public class CapabilitiesManager {
         // Create a new instance of PropertyManager to use them as capabilities
         Properties props = new PropertyManager().getProperties();
 
-        
         try {
             // Initialize capabilities object
             DesiredCapabilities capabilities = new DesiredCapabilities();
 
-            // Set capabilities using params and props 
+            // Set capabilities using params and props
             capabilities.setCapability("platformName", params.getPlatformName());
             capabilities.setCapability("deviceName", params.getDeviceName());
             capabilities.setCapability("systemPort", Integer.parseInt(params.getSystemPort()));
@@ -27,7 +26,8 @@ public class CapabilitiesManager {
             capabilities.setCapability("appPackage", props.getProperty("androidAppPackage"));
             capabilities.setCapability("appActivity", props.getProperty("androidAppActivity"));
             String androidAppUrl = System.getProperty("user.dir") + File.separator + "src" + File.separator + "test"
-                    + File.separator + "resources" + File.separator + "de" + File.separator + "frameworktsr" + File.separator + "app" + File.separator + "ApiDemos-debug.apk";
+                    + File.separator + "resources" + File.separator + "de" + File.separator + "frameworktsr"
+                    + File.separator + "app" + File.separator + "ApiDemos-debug.apk";
 
             capabilities.setCapability("app", androidAppUrl);
 
@@ -35,7 +35,8 @@ public class CapabilitiesManager {
 
         } catch (Exception e) {
 
-            // Catch and print exception if the capabilities are not initialized successfully
+            // Catch and print exception if the capabilities are not initialized
+            // successfully
             e.printStackTrace();
             throw e;
         }
