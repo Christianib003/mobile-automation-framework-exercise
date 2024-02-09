@@ -21,7 +21,7 @@ public class DriverManager {
     }
 
     // Create a method to initialize the driver
-    public void initializeDriver() {
+    public void initializeDriver() throws IOException {
         AppiumDriver driver = null;
 
         if(driver == null) {
