@@ -22,8 +22,8 @@ public class PropertyManager {
                 props.load(inputStream);
             }
 
-            // Catch and print the origin of the error if fetching doesn't work
             catch(IOException e) {
+                // Catch and print the origin of the error if fetching doesn't work
                 e.printStackTrace();
                 throw e;
             }
