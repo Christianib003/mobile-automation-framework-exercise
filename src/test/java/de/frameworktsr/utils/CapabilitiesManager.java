@@ -27,14 +27,14 @@ public class CapabilitiesManager {
             capabilities.setCapability("appPackage", props.getProperty("androidAppPackage"));
             capabilities.setCapability("appActivity", props.getProperty("androidAppActivity"));
             String androidAppUrl = System.getProperty("user.dir") + File.separator + "src" + File.separator + "test"
-                    + File.separator + "resources" + File.separator + "app" + File.separator + "ApiDemos-debug.apk";
+                    + File.separator + "resources" + File.separator + "de" + File.separator + "frameworktsr" + File.separator + "app" + File.separator + "ApiDemos-debug.apk";
 
             capabilities.setCapability("app", androidAppUrl);
 
             return capabilities;
 
         } catch (Exception e) {
-            
+
             // Catch and print exception if the capabilities are not initialized successfully
             e.printStackTrace();
             throw e;
