@@ -2,14 +2,14 @@ package de.frameworktsr.hooks;
 
 import java.io.IOException;
 
-import org.junit.After;
-import org.junit.Before;
 import org.openqa.selenium.OutputType;
 
 import de.frameworktsr.utils.DriverManager;
 import de.frameworktsr.utils.GlobalParams;
 import de.frameworktsr.utils.ServerManager;
 import de.frameworktsr.utils.VideoManager;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 
 public class Hooks {

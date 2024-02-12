@@ -2,6 +2,7 @@ package de.frameworktsr.pages;
 
 import java.time.Duration;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -44,5 +45,16 @@ public class BasePage {
         String elementId = ((RemoteWebElement) element).getId();
 
         return elementId;
+    }
+
+    public void checkSimilarityOfText(String text1, String text2) {
+        Assert.assertEquals(text1, text2);
+    }
+
+    public String getTextAttribute(By locatorBy) {
+        WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(locatorBy));
+        String textAttributeValue = element.getText();
+
+        return textAttributeValue;
     }
 }
