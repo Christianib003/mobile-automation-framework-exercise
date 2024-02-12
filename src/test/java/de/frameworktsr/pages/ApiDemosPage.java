@@ -19,7 +19,8 @@ public class ApiDemosPage extends BasePage {
     }
 
     public void dragAndDropTextLessCircle() {
-        dragAndDrop(textlessCircleBy, 800, 1300);
+        dragAndDropUsingElementId(textlessCircleBy, 800, 1300);
+        // dragAndDropUsingCoordinates(271, 790, 1000, 2507);
     }
 
     public Boolean isDragAndDropSuccessful(String expectedMessage) {

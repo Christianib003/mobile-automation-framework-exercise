@@ -28,21 +28,33 @@ public class BasePage {
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
 
-    public void click(By locatorBy) {
+    public WebElement getElement(By locatorBy) {
         WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(locatorBy));
-        element.click();
+
+        return element;
     }
 
-    public void dragAndDrop(By locatorBy, int endCoordinatesX, int endCoordinatesY) {
+    public void click(By locatorBy) {
+        getElement(locatorBy).click();
+    }
+
+    public void dragAndDropUsingElementId(By locatorBy, int endCoordinatesX, int endCoordinatesY) {
         ((JavascriptExecutor) driver).executeScript("mobile: dragGesture", ImmutableMap.of(
                 "elementId", getElementId(locatorBy),
                 "endX", endCoordinatesX,
                 "endY", endCoordinatesY));
     }
 
+    public void dragAndDropUsingCoordinates(int startX, int startY, int endX, int endY) {
+        ((JavascriptExecutor) driver).executeScript("mobile: dragGesture", ImmutableMap.of(
+                "startX", startX,
+                "startY", startY,
+                "endX", endX,
+                "endY", endY));
+    }
+
     public String getElementId(By locatorBy) {
-        WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(locatorBy));
-        String elementId = ((RemoteWebElement) element).getId();
+        String elementId = ((RemoteWebElement) getElement(locatorBy)).getId();
 
         return elementId;
     }
@@ -52,8 +64,7 @@ public class BasePage {
     }
 
     public String getTextAttribute(By locatorBy) {
-        WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(locatorBy));
-        String textAttributeValue = element.getText();
+        String textAttributeValue = getElement(locatorBy).getText();
 
         return textAttributeValue;
     }
