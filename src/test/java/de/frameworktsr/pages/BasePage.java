@@ -68,4 +68,14 @@ public class BasePage {
 
         return textAttributeValue;
     }
+
+    public String getAttributeValue(By locatorBy, String attribute) {
+        String attributeValue = getElement(locatorBy).getAttribute(attribute);
+
+        return attributeValue;
+    }
+
+    public void addTextToField(By locatorBy, String textToAdd) {
+        getElement(locatorBy).sendKeys(textToAdd);
+    }
 }
