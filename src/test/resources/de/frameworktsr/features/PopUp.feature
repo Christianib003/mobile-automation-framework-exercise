@@ -7,5 +7,5 @@ Feature: Pop Up
     And the user naviagtes to Preference dependencies
     * the user activates the WIFI settings
     * the user taps on WIFI settings
-    * the the user enters and saves "RK" as a WIFI setting
+    * the user enters and saves "RK" as a WIFI setting
     Then WIFI setting "RK" should be saved
