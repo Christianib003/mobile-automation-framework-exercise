@@ -1,7 +1,7 @@
 Feature: Pop Up
 
     The user should be able to interact with popups
-
+    @current
     Scenario: Adding New WIFI Setting
     When the user navigates to Prefence
     And the user naviagtes to Preference dependencies
