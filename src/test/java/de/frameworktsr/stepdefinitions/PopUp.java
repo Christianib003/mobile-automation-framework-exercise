@@ -1,12 +1,14 @@
 package de.frameworktsr.stepdefinitions;
 
+import de.frameworktsr.pages.ApiDemosPage;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class PopUp {
+    ApiDemosPage apiDemosPage = new ApiDemosPage();
     @When("the user navigates to Prefence")
     public void theUserNavigatesToPrefence() {
-
+        apiDemosPage.navigateToPreferences();
     }
 
     @When("the user naviagtes to Preference dependencies")
