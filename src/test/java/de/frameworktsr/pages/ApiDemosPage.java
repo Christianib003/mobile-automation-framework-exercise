@@ -37,13 +37,15 @@ public class ApiDemosPage extends BasePage {
         scroll(linksContainerBy, "down");
     }
 
-    public Boolean isTextClockVisible(String elementText) {
-        try {
-            WebElement textClockLink = getElement(
-                    AppiumBy.xpath("//android.widget.TextView[@text='" + elementText + "']"));
-            return true;
-        } catch (TimeoutException e) {
-            throw e;
-        }
+    public void scrollUp() {
+        scroll(linksContainerBy, "up");
+    }
+
+    public void isTextClockVisible(String textClockLinkText) {
+        isElementVisible(textClockLinkText);
+    }
+
+    public void isAnimationVisible(String animationLinkText) {
+        isElementVisible(animationLinkText);
     }
 }

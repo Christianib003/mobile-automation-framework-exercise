@@ -17,9 +17,8 @@ public class ScrollDown {
         apiDemosPage.scrollDown();
     }
 
-    @Then("the user should be able to see {string} link")
+    @Then("the user should be able to see {string} link at the top")
     public void the_user_should_be_able_to_see_link(String string) {
         apiDemosPage.isTextClockVisible(string);
     }
-
 }

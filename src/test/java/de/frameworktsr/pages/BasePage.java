@@ -5,6 +5,7 @@ import java.time.Duration;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -86,5 +87,15 @@ public class BasePage {
                     "elementId", getElementId(locator),
                         "direction", direction,
                         "percent", 3.0));
+    }
+
+    public Boolean isElementVisible(String elementText) {
+        try {
+            WebElement textClockLink = getElement(
+                    AppiumBy.xpath("//android.widget.TextView[@text='" + elementText + "']"));
+            return true;
+        } catch (TimeoutException e) {
+            throw e;
+        }
     }
 }
