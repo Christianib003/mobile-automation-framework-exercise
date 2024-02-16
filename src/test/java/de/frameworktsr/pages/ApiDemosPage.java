@@ -1,8 +1,6 @@
 package de.frameworktsr.pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.TimeoutException;
-import org.openqa.selenium.WebElement;
 
 import io.appium.java_client.AppiumBy;
 
