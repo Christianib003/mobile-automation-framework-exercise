@@ -1,9 +1,10 @@
 Feature: Scroll feature
 
     Background:
-        When  the user navigates to Views
+        When the user navigates to Views
         And the user scrolls down
 
+    @current
     Scenario: Scroll down
         Then the user should be able to see "TextClock" link
 
