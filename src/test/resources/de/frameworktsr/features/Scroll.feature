@@ -9,7 +9,6 @@ Feature: Scroll feature
     Scenario: Scroll down
         Then the user should be able to see "TextClock" link
 
-    @current
     Scenario: Scroll up
         When the user scrolls up to the top
         Then the user should be able to see "Animation" link at the top

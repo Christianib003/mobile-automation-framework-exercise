@@ -93,7 +93,7 @@ public class BasePage {
         try {
             WebElement textClockLink = getElement(
                     AppiumBy.xpath("//android.widget.TextView[@text='" + elementText + "']"));
-            return true;
+            return textClockLink.isDisplayed();
         } catch (TimeoutException e) {
             throw e;
         }
