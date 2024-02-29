@@ -5,6 +5,7 @@ import java.time.Duration;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -14,6 +15,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.google.common.collect.ImmutableMap;
 
 import de.frameworktsr.utils.DriverManager;
+import io.appium.java_client.AppiumBy;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
@@ -77,5 +79,23 @@ public class BasePage {
 
     public void addTextToField(By locatorBy, String textToAdd) {
         getElement(locatorBy).sendKeys(textToAdd);
+    }
+
+    public void scroll(By locator, String direction) {
+        boolean canScrollMore = (Boolean) ((JavascriptExecutor) driver).executeScript("mobile: scrollGesture",
+                ImmutableMap.of(
+                    "elementId", getElementId(locator),
+                        "direction", direction,
+                        "percent", 3.0));
+    }
+
+    public Boolean isElementVisible(String elementText) {
+        try {
+            WebElement textClockLink = getElement(
+                    AppiumBy.xpath("//android.widget.TextView[@text='" + elementText + "']"));
+            return textClockLink.isDisplayed();
+        } catch (TimeoutException e) {
+            throw e;
+        }
     }
 }

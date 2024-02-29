@@ -9,6 +9,7 @@ public class ApiDemosPage extends BasePage {
     By dragAndDropLinkBy = AppiumBy.accessibilityId("Drag and Drop");
     By preferenceLinkBy = AppiumBy.accessibilityId("Preference");
     By preferenceDependenciesLinkBy = AppiumBy.accessibilityId("3. Preference dependencies");
+    By linksContainerBy = AppiumBy.id("android:id/content");
 
     public void navigateToviews() {
         click(viewsLinkBy);
@@ -30,4 +31,19 @@ public class ApiDemosPage extends BasePage {
         return new PreferenceDependenciesPage();
     }
 
+    public void scrollDown() {
+        scroll(linksContainerBy, "down");
+    }
+
+    public void scrollUp() {
+        scroll(linksContainerBy, "up");
+    }
+
+    public void isTextClockVisible(String textClockLinkText) {
+        isElementVisible(textClockLinkText);
+    }
+
+    public void isAnimationVisible(String animationLinkText) {
+        isElementVisible(animationLinkText);
+    }
 }

@@ -9,10 +9,19 @@ import de.frameworktsr.utils.GlobalParams;
 import de.frameworktsr.utils.ServerManager;
 import de.frameworktsr.utils.VideoManager;
 import io.cucumber.java.After;
+import io.cucumber.java.AfterAll;
 import io.cucumber.java.Before;
+import io.cucumber.java.BeforeAll;
 import io.cucumber.java.Scenario;
 
 public class Hooks {
+
+    @BeforeAll
+    public static void startAppiumServer() {
+        // Start the server
+        new ServerManager().startServer();
+    }
+
     @Before
     public void initialize() throws Exception {
 
@@ -20,8 +29,6 @@ public class Hooks {
         GlobalParams params = new GlobalParams();
         params.initializeGlobalParams();
 
-        // Start the server
-        new ServerManager().startServer();
 
         // Initialize the driver
         new DriverManager().initializeDriver();
@@ -51,6 +58,10 @@ public class Hooks {
             driverManager.setDriver(null);
         }
 
+    }
+    
+    @AfterAll
+    public static void closeAppiumServer() {
         // Stop the server
         ServerManager serverManager = new ServerManager();
         if (serverManager.getServer() != null) {

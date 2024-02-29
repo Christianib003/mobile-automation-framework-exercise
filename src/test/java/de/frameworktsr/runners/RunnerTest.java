@@ -9,7 +9,7 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(features = "src/test/resources/de/frameworktsr/features", glue = { "de.frameworktsr.stepdefinitions",
                 "de.frameworktsr.hooks", "de.frameworktsr.pages" }, plugin = {
                                 "pretty", "html:target/reports/html-report.html",
-                                "json:target/reports/json-report.html" }, tags = "@current")
+                                "json:target/reports/json-report.html" })
 public class RunnerTest {
 
 }
