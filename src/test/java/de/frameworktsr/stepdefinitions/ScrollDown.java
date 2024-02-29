@@ -7,11 +7,6 @@ import io.cucumber.java.en.When;
 public class ScrollDown {
     ApiDemosPage apiDemosPage = new ApiDemosPage();
 
-    // @When("the user navigates to Views")
-    // public void theUserNavigatesToViews() {
-    // apiDemosPage.navigateToviews();
-    // }
-
     @When("the user scrolls down")
     public void theUserScrollsDown() {
         apiDemosPage.scrollDown();
