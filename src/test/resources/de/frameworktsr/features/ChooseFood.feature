@@ -2,7 +2,6 @@ Feature: Choose Food
 
     The user should be able to select one type of Food
 
-    @current
     Scenario: Choosing a food type
     When the user navigates to Views
     And the user navigates to Radio Group
