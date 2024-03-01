@@ -1,6 +1,7 @@
 package de.frameworktsr.pages;
 
 import java.time.Duration;
+import java.util.List;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -97,5 +98,17 @@ public class BasePage {
         } catch (TimeoutException e) {
             throw e;
         }
+    }
+
+    public void scrollUntilVisibilityOfElementWithText(String elementText) {
+        driver.findElement(AppiumBy.androidUIAutomator(
+                "new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(" +
+                        "new UiSelector().textContains(\"" + elementText + "\"))"));
+    }
+
+    public List<WebElement> getAllElements(By locator) {
+        List<WebElement> elementsList = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(locator));
+
+        return elementsList;
     }
 }

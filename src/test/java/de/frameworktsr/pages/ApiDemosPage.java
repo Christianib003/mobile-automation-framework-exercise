@@ -10,6 +10,7 @@ public class ApiDemosPage extends BasePage {
     By preferenceLinkBy = AppiumBy.accessibilityId("Preference");
     By preferenceDependenciesLinkBy = AppiumBy.accessibilityId("3. Preference dependencies");
     By linksContainerBy = AppiumBy.id("android:id/content");
+    By radioGroupLinkBy = AppiumBy.accessibilityId("Radio Group");
 
     public void navigateToviews() {
         click(viewsLinkBy);
@@ -46,4 +47,13 @@ public class ApiDemosPage extends BasePage {
     public void isAnimationVisible(String animationLinkText) {
         isElementVisible(animationLinkText);
     }
+
+    public RadioGroupPage navigateToRadioGroup() {
+        scrollUntilVisibilityOfElementWithText("Radio Group");
+        click(radioGroupLinkBy);
+
+        return new RadioGroupPage();
+    }
+
+    
 }
