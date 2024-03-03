@@ -17,4 +17,14 @@ public class PhotosPage extends BasePage {
 
         return true;
     }
+
+    public void swipeImageRight() {
+        swipe(thirdImageBy, "right", 0.50);
+    }
+
+    public Boolean isFirstImageDisplayed() {
+        getElement(firstImageBy);
+
+        return true;
+    }
 }

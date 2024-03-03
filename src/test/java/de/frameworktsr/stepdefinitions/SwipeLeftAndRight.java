@@ -11,6 +11,8 @@ public class SwipeLeftAndRight {
     ApiDemosPage apiDemosPage = new ApiDemosPage();
     PhotosPage photosPage;
 
+    // Swipping to the left
+    
     @When("the user navigates to Gallery")
     public void the_user_navigates_to_gallery() {
         apiDemosPage.navigateToGallery();
@@ -29,5 +31,17 @@ public class SwipeLeftAndRight {
     @Then("the user should see all the images overflowing in the right")
     public void the_user_should_see_all_the_images() {
         assertTrue(photosPage.areOtherImagesDisplayed());
+    }
+
+    // Swiping image to the right
+
+    @When("the user swipes another image to the right")
+    public void the_user_swipes_another_image_to_the_right() {
+        photosPage.swipeImageRight();
+    }
+
+    @Then("user should see the first image")
+    public void user_should_see_the_first_image() {
+        assertTrue(photosPage.isFirstImageDisplayed());
     }
 }

@@ -6,9 +6,17 @@ Feature: Swipe actions
 
     Background:
         When the user navigates to Views
-    @current
+
     Scenario: Swipe left
         When the user navigates to Gallery
-        And the user navigates to Photos
-        And the user swipes the image in focus to the left
+        * the user navigates to Photos
+        * the user swipes the image in focus to the left
         Then the user should see all the images overflowing in the right
+
+    @current
+    Scenario: Swipe right
+        When the user navigates to Gallery
+        * the user navigates to Photos
+        * the user swipes the image in focus to the left
+        * the user swipes another image to the right
+        Then user should see the first image
