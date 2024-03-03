@@ -13,10 +13,15 @@ Feature: Swipe actions
         * the user swipes the image in focus to the left
         Then the user should see all the images overflowing in the right
 
-    @current
     Scenario: Swipe right
         When the user navigates to Gallery
         * the user navigates to Photos
         * the user swipes the image in focus to the left
         * the user swipes another image to the right
         Then user should see the first image
+
+    @current
+    Scenario: Swipe up
+        When the user swipes up
+        Then the user should see all the elements at the bottom of the page
+
