@@ -11,6 +11,8 @@ public class ApiDemosPage extends BasePage {
     By preferenceDependenciesLinkBy = AppiumBy.accessibilityId("3. Preference dependencies");
     By linksContainerBy = AppiumBy.id("android:id/content");
     By radioGroupLinkBy = AppiumBy.accessibilityId("Radio Group");
+    By galleryLinkBy = AppiumBy.accessibilityId("Gallery");
+    By photosLinkBy = AppiumBy.accessibilityId("1. Photos");
 
     public void navigateToviews() {
         click(viewsLinkBy);
@@ -55,5 +57,13 @@ public class ApiDemosPage extends BasePage {
         return new RadioGroupPage();
     }
 
-    
+    public void navigateToGallery() {
+        click(galleryLinkBy);
+    }
+
+    public PhotosPage navigateToPhotos() {
+        click(photosLinkBy);
+
+        return new PhotosPage();
+    }
 }

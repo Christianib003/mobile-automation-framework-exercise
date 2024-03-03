@@ -111,4 +111,12 @@ public class BasePage {
 
         return elementsList;
     }
+
+    public void swipe(By elementToSwipeLocator, String direction, double swipeStrength) {
+        String idOfElementToSwipe = getElementId(elementToSwipeLocator);
+        ((JavascriptExecutor) driver).executeScript("mobile: swipeGesture", ImmutableMap.of(
+                "elementId", idOfElementToSwipe,
+                "direction", direction,
+                "percent", swipeStrength));
+    }
 }
