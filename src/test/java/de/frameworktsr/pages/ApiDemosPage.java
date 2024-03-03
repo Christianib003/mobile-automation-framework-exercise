@@ -13,6 +13,8 @@ public class ApiDemosPage extends BasePage {
     By radioGroupLinkBy = AppiumBy.accessibilityId("Radio Group");
     By galleryLinkBy = AppiumBy.accessibilityId("Gallery");
     By photosLinkBy = AppiumBy.accessibilityId("1. Photos");
+    By pageLinksContainerBy = AppiumBy.xpath("//android.widget.ListView");
+    By webView3LinkBy = AppiumBy.accessibilityId("WebView3");
 
     public void navigateToviews() {
         click(viewsLinkBy);
@@ -65,5 +67,15 @@ public class ApiDemosPage extends BasePage {
         click(photosLinkBy);
 
         return new PhotosPage();
+    }
+
+    public void swipeToTheBottom() {
+        swipe(linksContainerBy, "up", 1.00);
+    }
+
+    public Boolean areBottomContentsDisplayed() {
+        getElement(webView3LinkBy);
+
+        return true;
     }
 }
