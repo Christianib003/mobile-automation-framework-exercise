@@ -9,11 +9,6 @@ public class DragAndDrop {
     ApiDemosPage apiDemosPage = new ApiDemosPage();
     DragAndDropPage dragDropPage;
 
-    @When("the user navigates to Views")
-    public void userNavigatesToViews() {
-        apiDemosPage.navigateToviews();
-    }
-
     @When("the user naviagates to Drag and Drop page")
     public void userNavigatesToDragAndDropPage() {
         dragDropPage = apiDemosPage.navigateToDragAndDropPage();
