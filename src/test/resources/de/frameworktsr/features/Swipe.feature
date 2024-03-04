@@ -1,8 +1,7 @@
-@current
 Feature: Swipe actions
 
     As a user,
-    I should be able to swipe my screen
+    I should be able to swipe on my screen
     so that I can see overflowing content
 
     Background:
