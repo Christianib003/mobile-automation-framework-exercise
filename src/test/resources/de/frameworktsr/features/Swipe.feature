@@ -1,3 +1,4 @@
+@current
 Feature: Swipe actions
 
     As a user,
@@ -23,8 +24,7 @@ Feature: Swipe actions
     Scenario: Swipe up
         When the user swipes up
         Then the user should see all the elements at the bottom of the page
-    
-    @current
+
     Scenario: Swipe down
         When the user swipes up
         And the user swipes down
