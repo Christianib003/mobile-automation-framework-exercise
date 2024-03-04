@@ -20,8 +20,13 @@ Feature: Swipe actions
         * the user swipes another image to the right
         Then user should see the first image
 
-    @current
     Scenario: Swipe up
         When the user swipes up
         Then the user should see all the elements at the bottom of the page
+    
+    @current
+    Scenario: Swipe down
+        When the user swipes up
+        And the user swipes down
+        Then the user should see the elements at the top fo the page
 
