@@ -3,6 +3,7 @@ package de.frameworktsr.pages;
 import org.openqa.selenium.By;
 
 import io.appium.java_client.AppiumBy;
+import io.appium.java_client.remote.AppiumProtocolHandshake;
 
 public class ApiDemosPage extends BasePage {
     By viewsLinkBy = AppiumBy.accessibilityId("Views");
@@ -16,6 +17,7 @@ public class ApiDemosPage extends BasePage {
     By pageLinksContainerBy = AppiumBy.xpath("//android.widget.ListView");
     By webView3LinkBy = AppiumBy.accessibilityId("WebView3");
     By animationLinkBy = AppiumBy.accessibilityId("Animation");
+    By popupMenuLinkBy = AppiumBy.accessibilityId("Popup Menu");
 
     public void navigateToviews() {
         click(viewsLinkBy);
@@ -88,5 +90,15 @@ public class ApiDemosPage extends BasePage {
         getElement(animationLinkBy);
 
         return true;
+    }
+
+    public void scrollToPopUpMenuLink() {
+        scrollUntilVisibilityOfElementWithText("Popup Menu");
+    }
+
+    public PopupMenuPage navigateToPopupMenu() {
+        click(popupMenuLinkBy);
+
+        return new PopupMenuPage();
     }
 }

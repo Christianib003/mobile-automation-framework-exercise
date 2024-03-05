@@ -1,41 +1,29 @@
 package de.frameworktsr.stepdefinitions;
 
+import static org.junit.Assert.assertTrue;
+
 import de.frameworktsr.pages.ApiDemosPage;
-import de.frameworktsr.pages.PreferenceDependenciesPage;
+import de.frameworktsr.pages.PopupMenuPage;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class PopUp {
     ApiDemosPage apiDemosPage = new ApiDemosPage();
-    PreferenceDependenciesPage preferenceDependenciesPage;
-    @When("the user navigates to Prefence")
-    public void theUserNavigatesToPrefence() {
-        apiDemosPage.navigateToPreferences();
+    PopupMenuPage popupMenuPage;
+
+    @When("the user navigates to Popup Menu")
+    public void the_user_navigates_to_popup_menu() {
+        apiDemosPage.scrollToPopUpMenuLink();
+        popupMenuPage = apiDemosPage.navigateToPopupMenu();
     }
 
-    @When("the user naviagtes to Preference dependencies")
-    public void theUserNaviagtesToPreferenceDependencies() {
-        preferenceDependenciesPage = apiDemosPage.navigateToPreferenceDependencies();
+    @When("the user clicks on {string} button")
+    public void the_user_clicks_on_button(String string) {
+        popupMenuPage.openPopUp();
     }
 
-    @When("the user activates the WIFI settings")
-    public void theUserActivatesTheWifiSettings() {
-        preferenceDependenciesPage.activateWifiSettings();
-    }
-
-    @When("the user taps on WIFI settings")
-    public void theUserTapsOnWifiSettings() {
-        preferenceDependenciesPage.openWifiSettingsPopUp();
-    }
-
-    @When("the user enters and saves {string} as a WIFI setting")
-    public void theUserEntersAndSavesWifiSetting(String string) {
-        preferenceDependenciesPage.addNewWifiSetting();
-    }
-
-    @Then("WIFI setting {string} should be saved")
-    public void wifiSettingShouldBeSaved(String string) {
-        preferenceDependenciesPage.openWifiSettingsPopUp();
-        preferenceDependenciesPage.isWifiSettingSaved(string);
+    @Then("a popup with text {string} should be displayed")
+    public void a_popup_with_text_should_be_displayed(String string) {
+        assertTrue(popupMenuPage.isPopUpDisplayed());
     }
 }
