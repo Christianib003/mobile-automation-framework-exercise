@@ -16,6 +16,7 @@ public class ApiDemosPage extends BasePage {
     By pageLinksContainerBy = AppiumBy.xpath("//android.widget.ListView");
     By webView3LinkBy = AppiumBy.accessibilityId("WebView3");
     By animationLinkBy = AppiumBy.accessibilityId("Animation");
+    By expandableListsLinkBy = AppiumBy.accessibilityId("Expandable Lists");
 
     public void navigateToviews() {
         click(viewsLinkBy);
@@ -88,5 +89,9 @@ public class ApiDemosPage extends BasePage {
         getElement(animationLinkBy);
 
         return true;
+    }
+
+    public void navigateToExpandableLists() {
+        click(expandableListsLinkBy);
     }
 }
