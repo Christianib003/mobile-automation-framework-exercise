@@ -17,6 +17,8 @@ public class ApiDemosPage extends BasePage {
     By pageLinksContainerBy = AppiumBy.xpath("//android.widget.ListView");
     By webView3LinkBy = AppiumBy.accessibilityId("WebView3");
     By animationLinkBy = AppiumBy.accessibilityId("Animation");
+    By expandableListsLinkBy = AppiumBy.accessibilityId("Expandable Lists");
+    By customAdapterBy = AppiumBy.accessibilityId("1. Custom Adapter");
     By popupMenuLinkBy = AppiumBy.accessibilityId("Popup Menu");
 
     public void navigateToviews() {
@@ -92,6 +94,15 @@ public class ApiDemosPage extends BasePage {
         return true;
     }
 
+    public void navigateToExpandableLists() {
+        click(expandableListsLinkBy);
+    }
+
+    public ExpandableListsPage navigateToCustomerAdapter() {
+        click(customAdapterBy);
+
+        return new ExpandableListsPage();
+    }
     public void scrollToPopUpMenuLink() {
         scrollUntilVisibilityOfElementWithText("Popup Menu");
     }

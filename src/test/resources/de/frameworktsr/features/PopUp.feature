@@ -2,7 +2,6 @@ Feature: Pop Up
 
     The user should be able to interact with popups
     
-    @current
     Scenario: Open pop up
     When the user navigates to Views
     And the user navigates to Popup Menu
