@@ -2,6 +2,7 @@ package de.frameworktsr.pages;
 
 import org.openqa.selenium.By;
 
+import de.frameworktsr.App;
 import io.appium.java_client.AppiumBy;
 
 public class ApiDemosPage extends BasePage {
@@ -17,6 +18,7 @@ public class ApiDemosPage extends BasePage {
     By webView3LinkBy = AppiumBy.accessibilityId("WebView3");
     By animationLinkBy = AppiumBy.accessibilityId("Animation");
     By expandableListsLinkBy = AppiumBy.accessibilityId("Expandable Lists");
+    By customAdapterBy = AppiumBy.accessibilityId("1. Custom Adapter");
 
     public void navigateToviews() {
         click(viewsLinkBy);
@@ -93,5 +95,11 @@ public class ApiDemosPage extends BasePage {
 
     public void navigateToExpandableLists() {
         click(expandableListsLinkBy);
+    }
+
+    public ExpandableListsPage navigateToCustomerAdapter() {
+        click(customAdapterBy);
+
+        return new ExpandableListsPage();
     }
 }

@@ -85,7 +85,7 @@ public class BasePage {
     public void scroll(By locator, String direction) {
         boolean canScrollMore = (Boolean) ((JavascriptExecutor) driver).executeScript("mobile: scrollGesture",
                 ImmutableMap.of(
-                    "elementId", getElementId(locator),
+                        "elementId", getElementId(locator),
                         "direction", direction,
                         "percent", 3.0));
     }
@@ -118,5 +118,12 @@ public class BasePage {
                 "elementId", idOfElementToSwipe,
                 "direction", direction,
                 "percent", swipeStrength));
+    }
+
+    public void longClick(By locator) {
+        String idOfElementToClick = getElementId(locator);
+        ((JavascriptExecutor) driver).executeScript("mobile: longClickGesture", ImmutableMap.of(
+                "elementId", idOfElementToClick,
+                "duration", 700));
     }
 }
