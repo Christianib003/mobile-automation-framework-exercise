@@ -2,7 +2,6 @@ package de.frameworktsr.pages;
 
 import org.openqa.selenium.By;
 
-import de.frameworktsr.App;
 import io.appium.java_client.AppiumBy;
 
 public class ApiDemosPage extends BasePage {
