@@ -126,4 +126,10 @@ public class BasePage {
                 "elementId", idOfElementToClick,
                 "duration", 700));
     }
+
+    public void clickByCoordinates(int coordX, int coordY) {
+        driver.executeScript("mobile: clickGesture", ImmutableMap.of(
+                "x", coordX,
+                "y", coordY));
+    }
 }
