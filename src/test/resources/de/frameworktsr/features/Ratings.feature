@@ -4,7 +4,6 @@ Feature: Ratings
     I should be able to give a rating
     so that I can give feedback
 
-    @current
     Scenario: three-star max rating
         When  the user navigates to Views
         And the user navigates to ratings bar
