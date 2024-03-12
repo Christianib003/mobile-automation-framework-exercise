@@ -9,7 +9,11 @@ Feature: Update Date and Time
         And the user navigates to Date Widgets
         And the user navigates to Dialog
 
-    @current
     Scenario: Change the date
         When the user changes the date
         Then the updated date should be reflected at the top
+
+    @current
+    Scenario: Change the time (clock)
+        When the user changes the time
+        Then the updated time should be reflected at the top
