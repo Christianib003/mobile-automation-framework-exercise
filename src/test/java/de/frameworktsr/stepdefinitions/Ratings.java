@@ -17,7 +17,7 @@ public class Ratings {
         ratingBarPage = apiDemosPage.navigateToRatingBar();
     }
 
-    @When("the user gives a {double} on three star line")
+    @When("the user gives a {double} using stars")
     public void the_user_gives_a_on_three_star_line(Double double1) {
         ratingBarPage.giveRating(double1);
     }
