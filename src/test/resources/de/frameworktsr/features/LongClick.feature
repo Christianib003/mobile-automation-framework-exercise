@@ -1,4 +1,3 @@
-@current
 Feature: Long Click Action
 
     As a user,

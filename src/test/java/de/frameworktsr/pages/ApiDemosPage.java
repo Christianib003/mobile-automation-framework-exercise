@@ -3,7 +3,6 @@ package de.frameworktsr.pages;
 import org.openqa.selenium.By;
 
 import io.appium.java_client.AppiumBy;
-import io.appium.java_client.remote.AppiumProtocolHandshake;
 
 public class ApiDemosPage extends BasePage {
     By viewsLinkBy = AppiumBy.accessibilityId("Views");
@@ -20,6 +19,7 @@ public class ApiDemosPage extends BasePage {
     By expandableListsLinkBy = AppiumBy.accessibilityId("Expandable Lists");
     By customAdapterBy = AppiumBy.accessibilityId("1. Custom Adapter");
     By popupMenuLinkBy = AppiumBy.accessibilityId("Popup Menu");
+    By ratingBarLinkBy = AppiumBy.accessibilityId("Rating Bar");
 
     public void navigateToviews() {
         click(viewsLinkBy);
@@ -111,5 +111,15 @@ public class ApiDemosPage extends BasePage {
         click(popupMenuLinkBy);
 
         return new PopupMenuPage();
+    }
+
+    public void scrollDownToRatingsBar() {
+        scrollUntilVisibilityOfElementWithText("Rating Bar");
+    }
+
+    public RatingBarPage navigateToRatingBar() {
+        click(ratingBarLinkBy);
+
+        return new RatingBarPage();
     }
 }
