@@ -44,11 +44,6 @@ public class DateWidgets {
         dialogPage.clickOkButton();
     }
 
-    @Then("the updated time should be reflected at the top")
-    public void the_updated_time_should_be_reflected_at_the_top() {
-        assertTrue(dialogPage.isTimeUpdated("00:00"));
-    }
-
     // Updating time using spinner
 
     @When("the user changes the time on the spinner")
@@ -59,4 +54,14 @@ public class DateWidgets {
         dialogPage.clickOkButton();
         dialogPage.isTimeUpdated("21:59");
     }
+
+    @Then("the updated time should be reflected at the top")
+    public void the_updated_time_should_be_reflected_at_the_top() {
+        assertTrue(dialogPage.isTimeUpdated("00:00"));
+    }
+    @Then("the time {string} should be reflected at the top")
+    public void the_time_should_be_reflected_at_the_top(String string) {
+        assertTrue(dialogPage.isTimeUpdated(string));
+    }
+
 }
