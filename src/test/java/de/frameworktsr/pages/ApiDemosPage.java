@@ -20,6 +20,8 @@ public class ApiDemosPage extends BasePage {
     By customAdapterBy = AppiumBy.accessibilityId("1. Custom Adapter");
     By popupMenuLinkBy = AppiumBy.accessibilityId("Popup Menu");
     By ratingBarLinkBy = AppiumBy.accessibilityId("Rating Bar");
+    By dateWidgetsLinkBy = AppiumBy.accessibilityId("Date Widgets");
+    By dialogLinkBy = AppiumBy.accessibilityId("1. Dialog");
 
     public void navigateToviews() {
         click(viewsLinkBy);
@@ -75,11 +77,11 @@ public class ApiDemosPage extends BasePage {
     }
 
     public void swipeToTheBottom() {
-        swipe(pageLinksContainerBy, "up", 1.00);
+        swipeElement(pageLinksContainerBy, "up", 1.00);
     }
 
     public void swipeToTheTop() {
-        swipe(pageLinksContainerBy, "down", 1.00);
+        swipeElement(pageLinksContainerBy, "down", 1.00);
     }
 
     public Boolean areBottomContentsDisplayed() {
@@ -103,6 +105,7 @@ public class ApiDemosPage extends BasePage {
 
         return new ExpandableListsPage();
     }
+
     public void scrollToPopUpMenuLink() {
         scrollUntilVisibilityOfElementWithText("Popup Menu");
     }
@@ -121,5 +124,15 @@ public class ApiDemosPage extends BasePage {
         click(ratingBarLinkBy);
 
         return new RatingBarPage();
+    }
+
+    public void navigateToDateWidgets() {
+        click(dateWidgetsLinkBy);
+    }
+
+    public DialogPage navigateToDialog() {
+        click(dialogLinkBy);
+
+        return new DialogPage();
     }
 }

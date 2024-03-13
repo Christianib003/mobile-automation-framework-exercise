@@ -9,7 +9,7 @@ public class PhotosPage extends BasePage {
     By thirdImageBy = AppiumBy.xpath("//android.widget.ImageView[3]");
 
     public void swipeImageLeft() {
-        swipe(firstImageBy, "left", 0.50);
+        swipeElement(firstImageBy, "left", 0.50);
     }
 
     public Boolean areOtherImagesDisplayed() {
@@ -19,7 +19,7 @@ public class PhotosPage extends BasePage {
     }
 
     public void swipeImageRight() {
-        swipe(thirdImageBy, "right", 0.50);
+        swipeElement(thirdImageBy, "right", 0.50);
     }
 
     public Boolean isFirstImageDisplayed() {
