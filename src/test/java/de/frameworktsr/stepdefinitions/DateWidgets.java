@@ -37,7 +37,7 @@ public class DateWidgets {
 
     // Update time using clock
 
-    @When("the user changes the time")
+    @When("the user changes the time on the clock")
     public void the_user_changes_the_time() {
         dialogPage.openClock();
         dialogPage.updateTime();
@@ -46,6 +46,17 @@ public class DateWidgets {
 
     @Then("the updated time should be reflected at the top")
     public void the_updated_time_should_be_reflected_at_the_top() {
-        assertTrue(dialogPage.isTimeUpdated());
+        assertTrue(dialogPage.isTimeUpdated("00:00"));
+    }
+
+    // Updating time using spinner
+
+    @When("the user changes the time on the spinner")
+    public void the_user_changes_the_time_on_the_spinner() throws InterruptedException {
+        dialogPage.openTimeSpinner();
+        dialogPage.spinToDesiredHour();
+        dialogPage.spinToDesiredMinutes();
+        dialogPage.clickOkButton();
+        dialogPage.isTimeUpdated("21:59");
     }
 }

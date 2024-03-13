@@ -77,11 +77,11 @@ public class ApiDemosPage extends BasePage {
     }
 
     public void swipeToTheBottom() {
-        swipe(pageLinksContainerBy, "up", 1.00);
+        swipeElement(pageLinksContainerBy, "up", 1.00);
     }
 
     public void swipeToTheTop() {
-        swipe(pageLinksContainerBy, "down", 1.00);
+        swipeElement(pageLinksContainerBy, "down", 1.00);
     }
 
     public Boolean areBottomContentsDisplayed() {
@@ -105,6 +105,7 @@ public class ApiDemosPage extends BasePage {
 
         return new ExpandableListsPage();
     }
+
     public void scrollToPopUpMenuLink() {
         scrollUntilVisibilityOfElementWithText("Popup Menu");
     }

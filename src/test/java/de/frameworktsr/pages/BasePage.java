@@ -112,12 +112,19 @@ public class BasePage {
         return elementsList;
     }
 
-    public void swipe(By elementToSwipeLocator, String direction, double swipeStrength) {
+    public void swipeElement(By elementToSwipeLocator, String direction, double swipeStrength) {
         String idOfElementToSwipe = getElementId(elementToSwipeLocator);
         ((JavascriptExecutor) driver).executeScript("mobile: swipeGesture", ImmutableMap.of(
                 "elementId", idOfElementToSwipe,
                 "direction", direction,
                 "percent", swipeStrength));
+    }
+
+    public void swipeByCoordinates(int left, int top, int width, int height) {
+        ((JavascriptExecutor) driver).executeScript("mobile: swipeGesture", ImmutableMap.of(
+                "left", left, "top", top, "width", width, "height", height,
+                "direction", "left",
+                "percent", 1.0));
     }
 
     public void longClick(By locator) {

@@ -13,7 +13,11 @@ Feature: Update Date and Time
         When the user changes the date
         Then the updated date should be reflected at the top
 
-    @current
     Scenario: Change the time (clock)
-        When the user changes the time
+        When the user changes the time on the clock
         Then the updated time should be reflected at the top
+
+    @current
+    Scenario: Change the time (spinner)
+        When the user changes the time on the spinner
+        # Then the updated time should be reflected at the top

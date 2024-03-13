@@ -12,6 +12,9 @@ public class DialogPage extends BasePage {
     By changeTimeUsingClockBtnBy = AppiumBy.accessibilityId("change the time");
     By twelveOClockBy = AppiumBy.accessibilityId("12");
     By zeroMinutesBy = AppiumBy.accessibilityId("0");
+    By changeTheTimeWithSpinnerBtnBy = AppiumBy.accessibilityId("change the time (spinner)");
+    By hourSpinnerBy = AppiumBy.xpath("//android.widget.NumberPicker[@index='0']");
+    By minutesSpinnerBy = AppiumBy.xpath("//android.widget.NumberPicker[@index='2']");
 
     public void openCalendar() {
         click(changeDateBtnBy);
@@ -50,7 +53,19 @@ public class DialogPage extends BasePage {
         return displayedTime;
     }
 
-    public Boolean isTimeUpdated() {
-        return getDisplayedTime().equals("00:00");
+    public Boolean isTimeUpdated(String expectedTime) {
+        return getDisplayedTime().equals(expectedTime);
+    }
+
+    public void openTimeSpinner() {
+        click(changeTheTimeWithSpinnerBtnBy);
+    }
+
+    public void spinToDesiredHour() {
+        swipeElement(hourSpinnerBy, "down", 0.50);
+    }
+
+    public void spinToDesiredMinutes() {
+        swipeElement(minutesSpinnerBy, "down", 0.50);
     }
 }
