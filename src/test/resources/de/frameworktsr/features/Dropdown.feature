@@ -10,4 +10,11 @@ Feature: Dropdown
         And the user navigates to animation
         And the user navigates to Push
         And the user selects their preferred "<animation_type>"
-        Then the "<animation_type>" should be selected
+        Then the correct "<animation_type>" should be selected
+
+        Examples:
+            | animation_type |
+            | Cross fade     |
+            | Push up        |
+            | Hyperspace     |
+            | Push left      |

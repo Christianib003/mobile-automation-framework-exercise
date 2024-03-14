@@ -22,6 +22,7 @@ public class ApiDemosPage extends BasePage {
     By ratingBarLinkBy = AppiumBy.accessibilityId("Rating Bar");
     By dateWidgetsLinkBy = AppiumBy.accessibilityId("Date Widgets");
     By dialogLinkBy = AppiumBy.accessibilityId("1. Dialog");
+    By pushLinkBy = AppiumBy.accessibilityId("Push");
 
     public void navigateToviews() {
         click(viewsLinkBy);
@@ -134,5 +135,15 @@ public class ApiDemosPage extends BasePage {
         click(dialogLinkBy);
 
         return new DialogPage();
+    }
+
+    public void navigateToAnimation() {
+        click(animationLinkBy);
+    }
+
+    public PushPage navigateToPush() {
+        click(pushLinkBy);
+
+        return new PushPage();
     }
 }
