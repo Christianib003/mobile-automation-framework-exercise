@@ -1,4 +1,3 @@
-@current
 Feature: Update Date and Time
 
     As a user
